@@ -21,6 +21,7 @@ require "sinatra/reloader" if development?
 require 'erb'
 
 require 'twitter'
+require 'instagram'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -33,3 +34,10 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+CALLBACK_URL = "http://localhost:9292/oauth/callback"
+
+Instagram.configure do |config|
+  config.client_id = "29559e6144dd4f62b5b27da252b410e5"
+  config.client_secret = "dda7b59e2f8e479e9905006abf4f1c00"
+end

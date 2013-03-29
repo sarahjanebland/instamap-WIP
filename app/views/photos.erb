@@ -1,0 +1,11 @@
+<% if @client %>
+
+<h1>recent photos nearby</h1>
+<% end %>
+
+
+<% @local_media_items.each do |media_item| %>
+  <ul>
+    <li><img src='<%= media_item.images.thumbnail.url %>'></li>
+  </ul>
+<% end %>
