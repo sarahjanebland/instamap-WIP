@@ -15,6 +15,8 @@ gem 'activerecord'
 
 gem 'rake'
 
+gem 'twitter'
+
 group :test do
   gem 'faker'
   gem 'rspec'
